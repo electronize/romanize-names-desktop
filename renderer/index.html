@@ -47,20 +47,6 @@
               </div>
             </div>
 
-            <!-- <div class="field">
-              <div class="ui left icon input">
-                <i class="user icon"></i>
-                <input type="text" name="email" placeholder="E-mail address">
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui left icon input">
-                <i class="lock icon"></i>
-                <input type="password" name="password" placeholder="Password">
-              </div>
-            </div> -->
-
-
             <!-- <div class="ui fluid large teal submit button">Login</div> -->
           </div>
 
@@ -72,34 +58,6 @@
 
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <div class="ui right action left icon input">
-      <i class="paragraph icon"></i>
-      <input type="text" placeholder="輸入姓名" id="input">
-      <div class="ui dropdown button">
-        <div class="text">拼音系統</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item">WG (default)</div>
-          <div class="item">MPS-II</div>
-          <div class="item">HANYU</div>
-        </div>
-      </div>
-    </div> -->
-
-
 
     <script type="text/javascript">
       window.$ = window.jQuery = require('../public/javascripts/jquery-2.1.4.min.js');
@@ -117,6 +75,23 @@
       };
       var system = 'WG';
 
+      function isDigit(value) {
+        var patrn = /^[0-9]*$/;
+        if (patrn.exec(value) == null || value == "") {
+          return false
+        } else {
+          return true
+        }
+      }
+      function isAlpha(value) {
+        if(/^[ a-z]+$/i.test(value)){
+          return true
+        } else {
+          return false
+        }
+      }
+
+
       $('.dropdown').dropdown({
         onChange: function (val) {
           console.log((valToSystem[val]));
@@ -126,6 +101,13 @@
       });
 
       $('#input').bind('input propertychange', function() {
+        if (isDigit(this.value)) {
+          console.log('isDigit');
+          return
+        } else if (isAlpha(this.value)) {
+          console.log('isAlpha');
+          return
+        }
         $('#output').html(romanize(this.value, system));
       });
 
