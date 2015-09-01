@@ -1,5 +1,7 @@
 # romanize-names-desktop
-Romanizing Chinese names on Desktop
+Romanizing Chinese names on Desktop.
+
+Using [Electron](http://electron.atom.io/) ⚡ to  this desktop apps.
 
 Thanks to [muan/romanize-names](https://github.com/muan/romanize-names)
 
