@@ -1,0 +1,16 @@
+{
+  "name": "romanize-names-desktop",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "electron-prebuilt": "^0.31.1",
+    "romanize-names": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "John-Lin <linton.tw@gmail.com> (http://linton.tw)",
+  "license": "MIT"
+}
