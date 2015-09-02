@@ -5,13 +5,10 @@ Using [Electron](http://electron.atom.io/) ⚡ to  build this desktop apps.
 
 Thanks to [muan/romanize-names](https://github.com/muan/romanize-names)
 
-### Usage
+### Download
 
-``` bash
-npm install
+Download the latest version for Windows/OS X on [releases](https://github.com/electronize/romanize-names-desktop/releases)
 
-npm start
-```
 
 ### Screenshots
 
