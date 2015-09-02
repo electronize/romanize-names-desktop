@@ -6,7 +6,8 @@
       <link rel="stylesheet" type="text/css" href="../public/stylesheets/semantic.min.css">
       <style type="text/css">
         body {
-          background-color: #DADADA;
+          background-color: #F8F8FF;
+          -webkit-app-region: drag;
         }
         body > .grid {
           height: 100%;
@@ -17,17 +18,22 @@
         .column {
           max-width: 450px;
         }
+        .button {
+          -webkit-app-region: no-drag;
+        }
       </style>
   </head>
   <body>
 
     <div class="ui middle aligned center aligned grid">
       <div class="column">
-        <h2 class="ui teal image header">
+        <h2 class="ui blue image header">
+          <img src="../public/images/name-tag.svg" class="image">
           <div class="content">
             姓名拼音轉換小幫手
           </div>
         </h2>
+
         <form class="ui large form">
           <div class="ui stacked segment">
 
@@ -40,23 +46,41 @@
 
           <div class="ui error message"></div>
 
-          <div class="ui divided selection list info message" id="output">
+          <div class="ui divided selection list" id="output">
+
             <a class="item">
-              <div class="ui red horizontal label">威妥瑪拼音</div>
+              <div class="ui purple horizontal label">威妥瑪拼音</div>
               <span class="wg-output">Hsuan Chang</span>
             </a>
             <a class="item">
-              <div class="ui purple horizontal label">國音第二式拼音</div>
+              <div class="ui teal horizontal label">國音第二式拼音</div>
               <span class="mps-output">Shiuan Jang</span>
             </a>
             <a class="item">
-              <div class="ui red horizontal label">漢語拼音</div>
+              <div class="ui green horizontal label">漢語拼音</div>
               <span class="hanyu-output">Syuan Jhang</span>
             </a>
-            <span class="item">
-              以上為轉換結果
-            </span>
+
           </div>
+
+          <button class="ui icon button" id="info-btn" data-content="台灣的現代國字羅馬拼音一直處在不合理的矛盾狀態，一個姓名可以有四種拼音方式">
+            <i class="info circle icon"></i>
+          </button>
+
+          <button class="ui icon button" id="github-btn" data-content="Open source">
+            <i class="github icon"></i>
+          </button>
+
+          <button class="ui icon button" id="online-btn" data-content="網頁版">
+            <i class="cloud icon"></i>
+          </button>
+
+          <button class="ui icon button" id="exit-btn" data-content="離開程式">
+            <i class="remove circle icon"></i>
+
+          </button>
+
+
         </form>
       </div>
     </div>

@@ -1,5 +1,6 @@
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var ipc = require('ipc');
 
 // Report crashes to our server.
 require('crash-reporter').start();
@@ -21,7 +22,7 @@ app.on('window-all-closed', function() {
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({'use-content-size': true});
+  mainWindow = new BrowserWindow({'use-content-size': true, 'frame': false});
 
   // and load the index.html of the app.
   mainWindow.loadUrl('file://' + __dirname + '/renderer/index.html');
@@ -37,3 +38,7 @@ app.on('ready', function() {
     mainWindow = null;
   });
 });
+
+ipc.on('exit-window', function() {
+  mainWindow.close();
+})
